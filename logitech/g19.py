@@ -40,7 +40,7 @@ class G19(object):
             for y in range(240):
                 r, g, b = access[x, y]
                 val = G19.rgb_to_uint16(r, g, b)
-                data.append(val >> 8)
+                data.append((val >> 8) & 0xff)
                 data.append(val & 0xff)
         return data
 
